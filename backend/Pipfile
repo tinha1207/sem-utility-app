@@ -10,6 +10,7 @@ uvicorn = "*"
 pandas = "*"
 python-multipart = "*"
 mysql-connector = "*"
+openpyxl = "*"
 
 [dev-packages]
 black = "*"

@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "13757f77b456560bc089f0e43efe2162d57ce04c6550beb0170afedfd7a44f45"
+            "sha256": "4ca4fffa01d512068febe11f590e8ecd8ebe1fb124ec7a3cea171646fba9ded1"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -34,11 +34,11 @@
         },
         "click": {
             "hashes": [
-                "sha256:353f466495adaeb40b6b5f592f9f91cb22372351c84caeb068132442a4518ef3",
-                "sha256:410e932b050f5eed773c4cda94de75971c89cdb3155a72a0831139a79e5ecb5b"
+                "sha256:6a7a62563bbfabfda3a38f3023a1db4a35978c0abd76f6c9605ecd6554d6d9b1",
+                "sha256:8458d7b1287c5fb128c90e23381cf99dcde74beaf6c7ff6384ce84d6fe090adb"
             ],
             "markers": "python_version >= '3.6'",
-            "version": "==8.0.3"
+            "version": "==8.0.4"
         },
         "colorama": {
             "hashes": [
@@ -48,13 +48,21 @@
             "markers": "platform_system == 'Windows'",
             "version": "==0.4.4"
         },
+        "et-xmlfile": {
+            "hashes": [
+                "sha256:8eb9e2bc2f8c97e37a2dc85a09ecdcdec9d8a396530a6d5a33b30b9a92da0c5c",
+                "sha256:a2ba85d1d6a74ef63837eed693bcb89c3f752169b0e3e7ae5b16ca5e1b3deada"
+            ],
+            "markers": "python_version >= '3.6'",
+            "version": "==1.1.0"
+        },
         "fastapi": {
             "hashes": [
-                "sha256:dcfee92a7f9a72b5d4b7ca364bd2b009f8fc10d95ed5769be20e94f39f7e5a15",
-                "sha256:f0a618aff5f6942862f2d3f20f39b1c037e33314d1b8207fd1c3a2cca76dfd8c"
+                "sha256:b58a2c46df14f62ebe6f24a9439927539ba1959b9be55ba0e2f516a683e5b9d4",
+                "sha256:b8ec8400623ef0b2ff558ebe06753b349f8e3a5dd38afea650800f2644ddba34"
             ],
             "index": "pypi",
-            "version": "==0.73.0"
+            "version": "==0.74.1"
         },
         "greenlet": {
             "hashes": [
@@ -158,6 +166,14 @@
             ],
             "markers": "python_version >= '3.10'",
             "version": "==1.22.2"
+        },
+        "openpyxl": {
+            "hashes": [
+                "sha256:40f568b9829bf9e446acfffce30250ac1fa39035124d55fc024025c41481c90f",
+                "sha256:8f3b11bd896a95468a4ab162fc4fcd260d46157155d1f8bfaabb99d88cfcf79f"
+            ],
+            "index": "pypi",
+            "version": "==3.0.9"
         },
         "pandas": {
             "hashes": [
@@ -325,11 +341,11 @@
         },
         "uvicorn": {
             "hashes": [
-                "sha256:25850bbc86195a71a6477b3e4b3b7b4c861fb687fb96912972ce5324472b1011",
-                "sha256:e85872d84fb651cccc4c5d2a71cf7ead055b8fb4d8f1e78e36092282c0cf2aec"
+                "sha256:8adddf629b79857b48b999ae1b14d6c92c95d4d7840bd86461f09bee75f1653e",
+                "sha256:c04a9c069111489c324f427501b3840d306c6b91a77b00affc136a840a3f45f1"
             ],
             "index": "pypi",
-            "version": "==0.17.4"
+            "version": "==0.17.5"
         }
     },
     "develop": {
@@ -364,11 +380,11 @@
         },
         "click": {
             "hashes": [
-                "sha256:353f466495adaeb40b6b5f592f9f91cb22372351c84caeb068132442a4518ef3",
-                "sha256:410e932b050f5eed773c4cda94de75971c89cdb3155a72a0831139a79e5ecb5b"
+                "sha256:6a7a62563bbfabfda3a38f3023a1db4a35978c0abd76f6c9605ecd6554d6d9b1",
+                "sha256:8458d7b1287c5fb128c90e23381cf99dcde74beaf6c7ff6384ce84d6fe090adb"
             ],
             "markers": "python_version >= '3.6'",
-            "version": "==8.0.3"
+            "version": "==8.0.4"
         },
         "colorama": {
             "hashes": [
@@ -394,11 +410,11 @@
         },
         "platformdirs": {
             "hashes": [
-                "sha256:30671902352e97b1eafd74ade8e4a694782bd3471685e78c32d0fdfd3aa7e7bb",
-                "sha256:8ec11dfba28ecc0715eb5fb0147a87b1bf325f349f3da9aab2cd6b50b96b692b"
+                "sha256:7535e70dfa32e84d4b34996ea99c5e432fa29a708d0f4e394bbcb2a8faa4f16d",
+                "sha256:bcae7cab893c2d310a711b70b24efb93334febe65f8de776ee320b517471e227"
             ],
             "markers": "python_version >= '3.7'",
-            "version": "==2.5.0"
+            "version": "==2.5.1"
         },
         "tomli": {
             "hashes": [

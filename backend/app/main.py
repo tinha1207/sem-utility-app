@@ -1,8 +1,17 @@
 from fastapi import FastAPI
-from .api.api_v1 import endpoints
+from fastapi.middleware.cors import CORSMiddleware
+from .api.api_v1.endpoints import iso_keyword
 
 app = FastAPI()
 
-app.include_router(
-    
+origins = ["http://localhost:3000"]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
+
+app.include_router(iso_keyword.router)

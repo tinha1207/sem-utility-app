@@ -5,6 +5,7 @@ import Head from "next/head";
 import { useState } from "react";
 import useStyles from "../../utils/styles";
 import AccountUploadForm from "../../components/AccountUploadForm";
+import TemplateButton from "../../components/TemplateButton";
 
 const Keyword = () => {
   const classes = useStyles();
@@ -22,21 +23,13 @@ const Keyword = () => {
       <Layout title="Keyword Iso Tool">
         <Grid container className={classes.main}>
           <Typography variant="h2">Keyword Isolation Tool</Typography>
-          <Grid container>
+          <Grid container className={classes.main}>
             <Grid item>
               <AccountUploadForm />
             </Grid>
           </Grid>
           <Grid item>
-            <Button
-              className={classes.button}
-              variant="contained"
-              size="small"
-              color="secondary"
-              onClick={onDownload}
-            >
-              Download Template
-            </Button>
+            <TemplateButton />
           </Grid>
         </Grid>
       </Layout>

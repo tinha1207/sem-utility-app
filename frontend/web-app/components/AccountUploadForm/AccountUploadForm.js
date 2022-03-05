@@ -40,15 +40,15 @@ const AccountUploadForm = () => {
   };
 
   const handleSubmit = (e) => {
-    const url = "http://127.0.0.1:8000/utility/fileupload/";
+    const url = "http://localhost:8000/utility/iso_keyword/";
     e.preventDefault();
     const formData = new FormData();
     console.log(account);
     console.log(file);
 
     // const header =
+    formData.append("account", account);
     formData.append("file", file);
-    formData.append("data", account);
     axios
       .post(url, formData, {
         headers: {

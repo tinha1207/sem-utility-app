@@ -2,9 +2,10 @@ import { makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   main: {
-    marginTop: 10,
-    marginLeft: 10,
-    marginBottom: 10,
+    justifyContent: "center",
+    // marginTop: 10,
+    // marginLeft: 10,
+    // marginBottom: 10,
   },
   h2: {
     marginBottom: 15,
