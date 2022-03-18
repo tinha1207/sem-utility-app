@@ -11,6 +11,8 @@ pandas = "*"
 python-multipart = "*"
 mysql-connector = "*"
 openpyxl = "*"
+alembic = "*"
+mysql-connector-python = "*"
 
 [dev-packages]
 black = "*"

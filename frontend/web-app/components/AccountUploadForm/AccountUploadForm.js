@@ -40,13 +40,9 @@ const AccountUploadForm = () => {
   };
 
   const handleSubmit = (e) => {
-    const url = "http://localhost:8000/utility/iso_keyword/";
     e.preventDefault();
-    const formData = new FormData();
-    console.log(account);
-    console.log(file);
-
-    // const header =
+    const url = "http://localhost:8000/utility/iso_keyword/";
+    let formData = new FormData();
     formData.append("account", account);
     formData.append("file", file);
     axios
@@ -68,42 +64,46 @@ const AccountUploadForm = () => {
 
   return (
     <>
-      <FormGroup className={classes.formGroup}>
-        <FormLabel id="account-label">Account</FormLabel>
-        <Select
-          // variant="outlined"
-          defaultValue={accounts ? accounts[0]["account"] : ""}
-          labelId="account-label"
-          value={account}
-          onChange={handleSelectOnChange}
-          autoFocus
-          className={classes.formElement}
-        >
-          {accounts.map((item, index) => {
-            return (
-              <MenuItem key={index} value={item.account}>
-                {`${item.name} - ${item.salesChannelId}`}
-              </MenuItem>
-            );
-          })}
-        </Select>
-        <Input
-          id="file-upload"
-          type="file"
-          className={classes.formElement}
-          onChange={handleFileOnChange}
-        ></Input>
-        <Button
-          className={classes.formElement}
-          type="submit"
-          variant="contained"
-          color="primary"
-          size="small"
-          onClick={handleSubmit}
-        >
-          Submit
-        </Button>
-      </FormGroup>
+      <form onSubmit={handleSubmit}>
+        <FormGroup className={classes.formGroup}>
+          <FormLabel id="account-input-label">Account</FormLabel>
+          <Select
+            // variant="outlined"
+            defaultValue={accounts ? accounts[0]["account"] : ""}
+            labelId="account-input-label"
+            value={account}
+            onChange={handleSelectOnChange}
+            autoFocus
+            className={classes.formElement}
+          >
+            {accounts.map((item, index) => {
+              return (
+                <MenuItem key={index} value={item.account}>
+                  {`${item.name} - ${item.salesChannelId}`}
+                </MenuItem>
+              );
+            })}
+          </Select>
+          <FormLabel id="file-input-label">ISO File Upload</FormLabel>
+          <Input
+            labelId="file-input-label"
+            id="file-upload"
+            type="file"
+            className={classes.formElement}
+            onChange={handleFileOnChange}
+          ></Input>
+          <Button
+            className={classes.formElement}
+            type="submit"
+            variant="contained"
+            color="primary"
+            size="small"
+            // onClick={handleSubmit}
+          >
+            Submit
+          </Button>
+        </FormGroup>
+      </form>
     </>
   );
 };

@@ -1,4 +1,4 @@
-import { Typography, Grid, Button, TextField, Input } from "@material-ui/core";
+import { Typography, Grid, Card } from "@material-ui/core";
 import React from "react";
 import Layout from "../../components/Layout";
 import Head from "next/head";
@@ -24,12 +24,16 @@ const Keyword = () => {
         <Grid container className={classes.main}>
           <Typography variant="h2">Keyword Isolation Tool</Typography>
           <Grid container className={classes.main}>
-            <Grid item>
-              <AccountUploadForm />
-            </Grid>
+            <Card variant="outlined" className={classes.card}>
+              <Grid item>
+                <AccountUploadForm />
+              </Grid>
+            </Card>
           </Grid>
-          <Grid item>
-            <TemplateButton />
+          <Grid container className={classes.main}>
+            <Grid item>
+              <TemplateButton />
+            </Grid>
           </Grid>
         </Grid>
       </Layout>
