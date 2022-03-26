@@ -349,7 +349,7 @@ class IsoNegativeProduct:
 
     def __post_init__(self):
         self.write_negative_auto()
-        self.write_archive_exact()
+        # self.write_archive_exact()
 
     def write_negative_auto(self):
         auto_campaign = f"{self.account}_{self.asin.upper()}_ISO_Auto"

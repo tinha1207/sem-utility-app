@@ -90,7 +90,9 @@ class IsoFileHandler:
 
         if len(search_term) == 10 and search_term[:2].upper() == "B0":
             return "product"
-        if len(search_term) == 10 and search_term.isalpha():
+        if len(search_term) == 10 and search_term.isnumeric():
+            return "product"
+        if len(search_term) == 10 and search_term[0:9].isnumeric() and search_term[-1].isalpha():
             return "product"
         return "keyword"
 

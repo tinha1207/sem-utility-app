@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { BackendProvider } from "../context/Backend";
 import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
@@ -9,11 +8,7 @@ function MyApp({ Component, pageProps }) {
       jssStyles.parentElement.removeChild(jssStyles);
     }
   }, []);
-  return (
-    <BackendProvider>
-      <Component {...pageProps} />
-    </BackendProvider>
-  );
+  return <Component {...pageProps} />;
 }
 
 export default MyApp;
