@@ -4,34 +4,20 @@ import { Button, FormControl, FormGroup, FormLabel } from "@material-ui/core";
 import { Select } from "@material-ui/core";
 import { MenuItem } from "@material-ui/core";
 import { Input } from "@material-ui/core";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 
 const AccountUploadForm = () => {
   const classes = useStyles();
-  const [account, setAccount] = useState("");
+  const [prefix, setPrefix] = useState("");
   const [file, setFile] = useState(null);
+  const [accounts, setAccounts] = useState([]);
+  const accountUrl = "http://localhost:8002/account/";
+  const isoKeywordUrl = "http://localhost:8001/utility/iso_keyword/";
 
-  const accounts = [
-    {
-      name: "Juvo Amazon US",
-      account: "Juvo_AMZUS",
-      salesChannelId: 1111,
-    },
-    {
-      name: "Talented Kitchen Amazon US",
-      account: "TLK_AMZUS",
-      salesChannelId: 1141,
-    },
-    {
-      name: "Juvo Amazon Canada",
-      account: "Juvo_AMZCA",
-      salesChannelId: 1121,
-    },
-  ];
   const handleSelectOnChange = (e) => {
     const value = e.target.value;
-    setAccount(value);
+    setPrefix(value);
     console.log(value);
   };
 
@@ -41,12 +27,11 @@ const AccountUploadForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const url = "http://localhost:8000/utility/iso_keyword/";
     let formData = new FormData();
-    formData.append("account", account);
+    formData.append("account", prefix);
     formData.append("file", file);
     axios
-      .post(url, formData, {
+      .post(isoKeywordUrl, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -62,24 +47,28 @@ const AccountUploadForm = () => {
       });
   };
 
+  useEffect(() => {
+    axios.get(accountUrl).then((response) => {
+      setAccounts(response.data);
+    });
+  }, []);
+
   return (
     <>
       <form onSubmit={handleSubmit}>
         <FormGroup className={classes.formGroup}>
           <FormLabel id="account-input-label">Account</FormLabel>
           <Select
-            // variant="outlined"
-            defaultValue={accounts ? accounts[0]["account"] : ""}
             labelId="account-input-label"
-            value={account}
+            value={prefix}
             onChange={handleSelectOnChange}
             autoFocus
             className={classes.formElement}
           >
-            {accounts.map((item, index) => {
+            {accounts.map((item) => {
               return (
-                <MenuItem key={index} value={item.account}>
-                  {`${item.name} - ${item.salesChannelId}`}
+                <MenuItem key={item.id} value={item.campaign_prefix}>
+                  {`${item.name} - ${item.sales_channel_id}`}
                 </MenuItem>
               );
             })}
